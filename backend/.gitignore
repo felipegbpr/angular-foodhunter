@@ -1,2 +1,6 @@
 node_modules
+<<<<<<< HEAD
 *.env
+=======
+src/.env
+>>>>>>> origin/main

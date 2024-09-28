@@ -3,8 +3,10 @@ import { AbstractControl } from '@angular/forms';
 
 const VALIDATORS_MESSAGES: any = {
   required: 'Should not be empty',
-  email: 'Email is not valid'
-} 
+  email: 'Email is not valid',
+  minlength: 'Field is too short',
+  notMatch: 'Password and Confirm does not match'
+}
 
 @Component({
   selector: 'input-validation',
@@ -16,11 +18,11 @@ export class InputValidationComponent implements OnInit, OnChanges {
   @Input()
   control!: AbstractControl;
   @Input()
-  showErrorsWhen: boolean = true;  
-  errorMessages: string[] = []; 
+  showErrorsWhen: boolean = true;
+  errorMessages: string[] = [];
 
   constructor() { }
- 
+
   ngOnChanges(changes: SimpleChanges): void {
    this.checkValidation();
   }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/partials/header/header.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +21,8 @@ import { DefaultButtonComponent } from './components/partials/default-button/def
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
+import { LoadingComponent } from './components/partials/loading/loading.component';
+import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { RegisterPageComponent } from './components/pages/register-page/register
     InputValidationComponent,
     TextInputComponent,
     DefaultButtonComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -53,9 +56,11 @@ import { RegisterPageComponent } from './components/pages/register-page/register
       positionClass:'toast-bottom-right',
       newestOnTop:false
     }),
-   
+
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

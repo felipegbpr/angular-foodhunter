@@ -5,21 +5,25 @@ import express from 'express';
 import cors from 'cors';
 import foodRouter from './routers/food.router';
 import userRouter from './routers/user.router';
+import orderRouter from './routers/order.router';
 import { dbConnect } from './configs/database.config';
 dbConnect();
 // ***+++ Express and Cors Config ***+++ //
 const app = express();
 app.use(express.json());
-app.use(cors({
+app.use(
+  cors({
     credentials: true,
-    origin: ['http://localhost:4200']
-}));
+    origin: ['http://localhost:4200'],
+  })
+);
 
 // ***+++ Routers ***+++ //
-app.use('/api/foods', foodRouter)
-app.use('/api/users/', userRouter)
+app.use('/api/foods', foodRouter);
+app.use('/api/users', userRouter);
+app.use('/api/orders', orderRouter);
 
 const port = 5000;
 app.listen(port, () => {
-    console.log('Website served on http://localhost:' + port);
+  console.log('Website served on http://localhost:' + port);
 });

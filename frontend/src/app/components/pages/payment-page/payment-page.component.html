@@ -17,5 +17,9 @@
     <app-title title="Shipping Address" fontSize="1.6rem"></app-title>
     <map [order]="order" [readonly]="true"></map>
   </div>
-  <div class="buttons-container"></div>
+  <div class="buttons-container">
+    <div class="buttons">
+      <paypal-button [order]="order"> </paypal-button>
+    </div>
+  </div>
 </div>

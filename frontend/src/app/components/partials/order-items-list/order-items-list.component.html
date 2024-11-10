@@ -14,13 +14,13 @@
       {{ item.food.name }}
     </td>
     <td>
-      {{ item.food.price | currency }}
+      {{ item.food.price | currency : "BRL" }}
     </td>
     <td>
       {{ item.quantity }}
     </td>
     <td>
-      {{ item.price | currency }}
+      {{ item.price | currency : "BRL" }}
     </td>
   </tr>
   <tr>

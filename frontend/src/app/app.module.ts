@@ -31,6 +31,7 @@ import { PaypalButtonComponent } from './components/partials/paypal-button/paypa
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 
 registerLocaleData(localePt);
 @NgModule({
@@ -56,6 +57,7 @@ registerLocaleData(localePt);
     MapComponent,
     PaypalButtonComponent,
     PaymentPageComponent,
+    OrderTrackPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -24,9 +24,6 @@
         "@schematics/angular:pipe": {
           "skipTests": true
         },
-        "@schematics/angular:resolver": {
-          "skipTests": true
-        },
         "@schematics/angular:service": {
           "skipTests": true
         },
@@ -120,8 +117,5 @@
       }
     }
   },
-  "defaultProject": "frontend",
-  "cli": {
-    "analytics": false
-  }
+  "defaultProject": "frontend"
 }

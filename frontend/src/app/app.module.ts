@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/partials/header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/pages/home/home.component';
-import { RatingModule } from 'ng-starrating';
 import { SearchComponent } from './components/partials/search/search.component';
 import { FoodPageComponent } from './components/pages/food-page/food-page.component';
 import { TagsComponent } from './components/partials/tags/tags.component';
@@ -32,6 +31,7 @@ import { PaymentPageComponent } from './components/pages/payment-page/payment-pa
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
+import { StarRatingComponent } from './components/partials/star-rating/star-rating.component';
 
 registerLocaleData(localePt);
 @NgModule({
@@ -58,12 +58,12 @@ registerLocaleData(localePt);
     PaypalButtonComponent,
     PaymentPageComponent,
     OrderTrackPageComponent,
+    StarRatingComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    RatingModule,
     HttpClientModule,
     ReactiveFormsModule,
     ToastrModule.forRoot({

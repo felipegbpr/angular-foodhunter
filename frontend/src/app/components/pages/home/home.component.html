@@ -1,30 +1,18 @@
 <app-search></app-search>
 <app-tags></app-tags>
-<app-not-found
-  [visible]="!foods || !foods.length"
-  resetLinkText="Reset Search"
->
+<app-not-found [visible]="!foods || !foods.length" resetLinkText="Reset Search">
 </app-not-found>
 <ul>
   <li *ngFor="let food of foods">
-    <a routerLink="/food/{{food.id}}">
-      <img [src]="food.imageUrl" [alt]="food.name">
+    <a routerLink="/food/{{ food.id }}">
+      <img [src]="food.imageUrl" [alt]="food.name" />
       <div class="content">
         <div class="name">
-          {{food.name}}
+          {{ food.name }}
         </div>
-        <span class="favorite {{food.favorite?'':'not'}}">
-          ❤
-        </span>
+        <span class="favorite {{ food.favorite ? '' : 'not' }}"> ❤ </span>
         <div class="stars">
-          <star-rating
-            [value]="food.stars"
-            [totalstars]="5"
-            checkedcolor="red"
-            uncheckedcolor="black"
-            size="22px"
-            [readonly]="true">
-          </star-rating>
+          <star-rating [stars]="food.stars" />
         </div>
         <div class="product-item-footer">
           <div class="origins">
